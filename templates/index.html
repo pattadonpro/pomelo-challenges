@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/templates/js/jquery.js" type="text/javascript"></script>
+    <script src="/templates/js/jquery.twbsPagination.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <title>Pomelo Challenge</title>
+</head>
+<body>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Watchers</th>
+        <th>Score</th>
+    </tr>
+    </thead>
+    {{#each items}}
+    <tbody>
+    <tr>
+        <td>{{id}}</td>
+        <td>{{name}}</td>
+        <td>{{description}}</td>
+        <td>{{watchers}}</td>
+        <td>{{score}}</td>
+    </tr>
+    </tbody>
+    {{/each}}
+</table>
+<div class="container">
+    <nav aria-label="Page navigation">
+        <ul class="pagination" id="pagination"></ul>
+    </nav>
+</div>
+<script type="text/javascript">
+    const currentPage = '{{current_page}}';
+    const totalPages = Math.ceil('{{total_count}}' / 10);
+    $(function () {
+        window.pagObj = $('#pagination').twbsPagination({
+            startPage: currentPage,
+            totalPages: totalPages,
+            visiblePages: 10,
+            pageVariable: 'page',
+            href: true
+        });
+    });
+</script>
+</body>
+</html>

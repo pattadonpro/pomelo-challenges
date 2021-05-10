@@ -1,0 +1,22 @@
+{
+  "name": "pomelo-challenges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest --verbose"
+  },
+  "author": "Pattadon Prongpreecha",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^20.1.2",
+    "@hapi/inert": "^6.0.3",
+    "@hapi/vision": "^6.0.1",
+    "axios": "^0.21.1",
+    "handlebars": "^4.7.7"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
